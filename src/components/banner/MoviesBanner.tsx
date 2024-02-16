@@ -5,7 +5,7 @@ interface props {
   items: any;
 }
 
-const Upcomming = ({ title, items }: props) => {
+const MoviesBanner = ({ title, items }: props) => {
   return (
     <>
       <section className="upcome">
@@ -22,4 +22,4 @@ const Upcomming = ({ title, items }: props) => {
   )
 }
 
-export default Upcomming;
+export default MoviesBanner;

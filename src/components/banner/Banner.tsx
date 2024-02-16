@@ -1,19 +1,21 @@
 import { useState } from 'react'
 import { homeData } from '../../dummyData';
-import Home from './Home';
-import './Home.css';
+import SliderComponent from '../slider/SliderComponent';
+import './Banner.css';
 
-const Homes = () => {
+
+const Banner = () => {
   const [items, setItems] = useState(homeData);
   return (
     <>
       <section className='home'>
-        <Home items={items} />
+        <div className='homeContainer'>
+          <SliderComponent items={items} type="Home" />
+        </div>
       </section>
       <div className="margin"></div>
-
     </>
   )
 }
 
-export default Homes
+export default Banner;

@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import './Trending.css'
 import { trending } from '../../dummyData';
-// import Upcomming from '../upcoming/Upcomming';
-import Home from '../home/Home';
+import SliderComponent from '../slider/SliderComponent';
 
 const Trending = () => {
-  const [trendingData, SetTrendingData] = useState(trending);
+  const [trendingData, setTrendingData] = useState(trending);
   return (
-   <>
+    <>
       <section className='trending'>
-        <Home items={trendingData}/>
-        {/* <Upcomming items={trendingData} title="Trending Movies" /> */}
+      <div className='homeContainer'>
+          <SliderComponent items={trendingData} type="trending" />
+        </div>
       </section>
-   </>
+    </>
   )
 }
 

@@ -110,6 +110,9 @@
     letter-spacing: 2px;
     transition: 0.5s;
 }
+a{
+    color: white;
+}
 .margin {
     margin-top: 50%;
 }

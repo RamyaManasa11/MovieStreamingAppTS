@@ -5,7 +5,7 @@ import Upcomming from "../components/upcoming/Upcomming";
 import Trending from "../components/trending/Trending";
 
 
-const HomePage = () => {
+const HomePages = () => {
   const [items, setItems] = useState(upcome);
   const [latestData, setLatestData] = useState(latest);
   const [recommendedData, setRecommendedData] = useState(recommended);
@@ -20,4 +20,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default HomePages

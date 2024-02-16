@@ -3,26 +3,38 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 interface props {
-  item: any;
+  item: {
+    id: number;
+    cover: any;
+    name: string;
+    rating: number;
+    time: string;
+    starring: string;
+    genres: string;
+    desc: string;
+    tags: string;
+    video: any;
+  };
+  path: String;
 }
 
-const HomeCard = ({item: { id, cover, name, rating, time, desc, starring, genres, tags, video } }: props) => {
+const BannerCard = ({ item: { id, cover, name, rating, time, desc, starring, genres, tags }, path }: props) => {
   return (
     <>
       <div className='box'>
         <div className='coverImage'>
-          <img src={cover} alt=''/>
+          <img src={cover} alt='' />
         </div>
         <div className='content flex'>
           <div className='details row'>
             <h1>{name}</h1>
             <div className='rating flex'>
               <div className='rate'>
-                <FontAwesomeIcon className="ratingIcon" icon={faStar}/>
-                <FontAwesomeIcon className="ratingIcon" icon={faStar}/>
-                <FontAwesomeIcon className="ratingIcon" icon={faStar}/>
-                <FontAwesomeIcon className="ratingIcon" icon={faStar}/>
-                <FontAwesomeIcon className="ratingIcon" icon={faStarHalf}/>
+                <FontAwesomeIcon className="ratingIcon" icon={faStar} />
+                <FontAwesomeIcon className="ratingIcon" icon={faStar} />
+                <FontAwesomeIcon className="ratingIcon" icon={faStar} />
+                <FontAwesomeIcon className="ratingIcon" icon={faStar} />
+                <FontAwesomeIcon className="ratingIcon" icon={faStarHalf} />
               </div>
               <label>{rating}</label>
               <label>{time}</label>
@@ -43,11 +55,11 @@ const HomeCard = ({item: { id, cover, name, rating, time, desc, starring, genres
               </h4>
             </div>
             <button className='primary-btn'>
-              <FontAwesomeIcon icon={faPlay}/>PLAY NOW
+              <FontAwesomeIcon icon={faPlay} />PLAY NOW
             </button>
           </div>
           <div className='playButton row'>
-            <Link to={`/singlepage/${id}`}>
+            <Link to={`/singlepage/${id}/${path}`}>
               <button>
                 <div className='img'>
                   <img src='./images/play-button.png' alt='' />
@@ -63,4 +75,4 @@ const HomeCard = ({item: { id, cover, name, rating, time, desc, starring, genres
   )
 }
 
-export default HomeCard;
+export default BannerCard;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './WatchPage.css';
 import { useParams } from 'react-router-dom';
-import { homeData, recommended } from '../../dummyData';
+import { homeData, latest, recommended, trending, upcome } from '../../dummyData';
 import Upcomming from '../upcoming/Upcomming';
 
 interface HomeItem {
@@ -19,12 +19,14 @@ interface SinglePageProps {
 
 const SinglePage = () => {
   const { id } = useParams<{ id: string }>();
+  const {path} = useParams<{path: string}>();
   const [item, setItem] = useState<HomeItem | null>(null);
   const [rec, setRec] = useState(recommended);
-
+  const [data, setData] = useState(path==='Home' ? homeData: (path==='latest' ? latest : (path=== "trending" ? trending : upcome)));
+  
   useEffect(() => {
     const parsedId = parseInt(id ? id : '');
-    let item = homeData.find((item) => item.id === parsedId)
+    let item = data.find((item) => item.id === parsedId)
     console.log(id)
     if (item) {
       setItem(item);
